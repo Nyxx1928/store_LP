@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0b0d10;
+  --foreground: #f4f1ec;
+  --ink: #0b0d10;
+  --coal: #11151a;
+  --iron: #1b222b;
+  --smoke: #c7c9cc;
+  --ember: #ff6a3d;
+  --signal: #1fe0a6;
+  --gold: #f6c453;
+  --brand: #6f7bf7;
+  --mist: #a8b2c1;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink: var(--ink);
+  --color-coal: var(--coal);
+  --color-iron: var(--iron);
+  --color-smoke: var(--smoke);
+  --color-ember: var(--ember);
+  --color-signal: var(--signal);
+  --color-gold: var(--gold);
+  --color-brand: var(--brand);
+  --color-mist: var(--mist);
+  --font-sans: var(--font-body-font);
+  --font-display: var(--font-display-font);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body-font), sans-serif;
+}
+
+.page-shell {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(circle at top left, rgba(31, 224, 166, 0.14), transparent 40%),
+    radial-gradient(circle at 20% 70%, rgba(255, 106, 61, 0.12), transparent 45%),
+    radial-gradient(circle at 80% 20%, rgba(111, 123, 247, 0.16), transparent 35%),
+    linear-gradient(180deg, #0a0c0f 0%, #0b0d10 60%, #0f1318 100%);
+}
+
+.page-shell::after {
+  content: "";
+  position: fixed;
+  inset: -20% -20% 0 -20%;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 4px 4px;
+  opacity: 0.2;
+  mix-blend-mode: screen;
+}
+
+.glass-card {
+  background: rgba(17, 21, 26, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+}
+
+.accent-bar {
+  background: linear-gradient(120deg, rgba(255, 106, 61, 0.9), rgba(31, 224, 166, 0.9));
+}
+
+.remote-stage {
+  perspective: 1200px;
+}
+
+.remote-frame {
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.55);
+  background: #0a0c10;
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+}
